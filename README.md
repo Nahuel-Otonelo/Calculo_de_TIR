@@ -1,13 +1,13 @@
 # Monitor de TIR Real - Bonos CER (Argentina) 📈
 
-Este proyecto permite calcular la **Tasa Interna de Retorno (TIR) Real** de por ahora los bonos ajustables por CER TX26 y TX28 (algún día el TX31) del mercado argentino. El script no está hardcodeado y la obtención del precio del bono y del CER del día actual, se obtiene automáticamente (al momento de correrse, queda actualizado al instante).
+Este código permite calcular la **Tasa Interna de Retorno (TIR)** de por ahora los bonos ajustables por CER TX26 y TX28 (algún día el TX31) del mercado argentino. El script no está hardcodeado y la obtención del precio del bono y del CER del día actual, se obtiene automáticamente (al momento de correrse, queda actualizado al instante).
 
 ## 🚀 Características
 
 * **Scraping de Precios en Tiempo Real**: Obtiene las cotizaciones "Dirty Price" directamente desde la página de IOL.
 * **Conexión con API BCRA**: Obtiene el último valor del coeficiente CER mediante la API oficial del Banco Central de la República Argentina.
-* **Cálculo de Flujos Dinámico**: Una clase `BonoCER` reconstruye el cronograma de pagos (interés y amortización), descontando automáticamente los cupones ya cobrados a la fecha.
-* **TIR Real**: Calcula el rendimiento por encima de la inflación utilizando el método de Newton-Raphson para encontrar la raíz del Valor Presente Neto (VPN).
+* **Cálculo de Flujos Dinámicos**: Una clase `BonoCER` reconstruye el cronograma de pagos (interés y amortización), descontando automáticamente los cupones ya cobrados a la fecha (de acuerdo a condiciones de emisión).
+* **TIR**: Calcula el rendimiento por encima de la inflación utilizando el método de Newton-Raphson para encontrar la raíz del Valor Presente Neto (VPN).
 
 ## 🛠️ Estructura del Proyecto
 
@@ -53,7 +53,7 @@ El script utiliza `urllib3.disable_warnings()` para facilitar la conexión con l
 
 ## 🤝 Feedback y Contribuciones (¡Se buscan errores!)
 
-No soy del palo de las finanzas. Por eso, si encontrás un error en el cálculo, una inconsistencia en las condiciones de emisión de algún bono, o simplemente creés que el código podría ser más eficiente (¡seguro que sí!), por favor no dudes en decírmelo.
+No soy analista financiero. Por eso, si encontrás un error en el cálculo, una inconsistencia en las condiciones de emisión de algún bono, o simplemente creés que el código podría ser más eficiente (¡seguro que sí!), por favor no dudes en decírmelo.
 
 ¿Cómo podés ayudar?
 
